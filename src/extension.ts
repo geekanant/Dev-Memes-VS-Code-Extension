@@ -7,7 +7,7 @@ let res: AxiosResponse<any>;
 const fetchResults = async () => {
   try {
     res = await axios.get(
-      "http://meme-api.herokuapp.com/gimme/programmingmemes"
+      "http://meme-api.com/gimme/programmingmemes"
     );
   } catch (err) {
     console.log(err);
@@ -65,7 +65,7 @@ class DevMemesSearchView implements vscode.WebviewViewProvider {
 				  </a>
 					  <script>
 						  function ChangeHref(){
-                fetch('http://meme-api.herokuapp.com/gimme/programmingmemes', {
+                fetch('http://meme-api.com/gimme/programmingmemes', {
                   method: 'GET'
                 })
                 .then(res => res.json())

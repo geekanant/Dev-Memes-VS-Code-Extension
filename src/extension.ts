@@ -6,9 +6,7 @@ let res: AxiosResponse<any>;
 
 const fetchResults = async () => {
   try {
-    res = await axios.get(
-      "http://meme-api.com/gimme/programmingmemes"
-    );
+    res = await axios.get("http://meme-api.com/gimme/programmingmemes");
   } catch (err) {
     console.log(err);
   }
@@ -59,10 +57,10 @@ class DevMemesSearchView implements vscode.WebviewViewProvider {
 				  <title>DevMemes Search</title>
 			  </head>
 			  <body>
-          <img src=${res.data.url} id="img-meme"></img>
 				  <a>
 					  <button onclick="ChangeHref()" id="dev-memes" >Reload</button>
 				  </a>
+          <img src=${res.data.url} id="img-meme"></img>
 					  <script>
 						  function ChangeHref(){
                 fetch('http://meme-api.com/gimme/programmingmemes', {
